@@ -88,6 +88,7 @@ class AssistanceRequestController extends Controller
                 ->where('assistance_requests.client_id', $cliente->id)
                 ->get();
 
+                dd($respuesta);
             return response()->json($respuesta, 201);
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Error al procesar la solicitud de asistencia', 'error' => $th->getMessage()], 500);
